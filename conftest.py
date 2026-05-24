@@ -13,7 +13,8 @@ def browser(request, playwright_instance):
     browser_name = request.param
 
     browser = getattr(playwright_instance, browser_name).launch(
-        headless=False
+        headless=False,
+        slow_mo = 1000
     )
 
     yield browser

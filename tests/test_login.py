@@ -1,7 +1,22 @@
 import time
 
+from pages.loginPage import LoginPage
+from utilities.configReader import ConfigReader
 
-def test_login(page):
-    page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-    assert "OrangeHRM" in page.title()
+
+def test_valid_login(page):
+
+    page.goto(ConfigReader.QA_URL)
+
+    login = LoginPage(page)
+
+    login.login(
+        ConfigReader.USERNAME,
+        ConfigReader.PASSWORD
+    )
+
+    page.wait_for_url("**/dashboard/**")
+
+    assert "dashboard" in page.url.lower()
+
     time.sleep(2)
