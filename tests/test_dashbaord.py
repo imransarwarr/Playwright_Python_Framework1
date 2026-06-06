@@ -1,7 +1,11 @@
-# import time
-#
-#
-# def test_login(page):
-#     page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-#     assert "OrangeHRM" in page.title()
-#     time.sleep(2)
+import time
+
+from pages.dashboardPage import DashboardPage
+
+
+def test_dashboard(logged_in_page):
+
+    dashboard = DashboardPage(logged_in_page)
+
+    dashboard.navigate_to_pim()
+    time.sleep(2)
