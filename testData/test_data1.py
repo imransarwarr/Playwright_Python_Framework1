@@ -1,0 +1,5 @@
+class TestData1:
+
+    JOB_TITLE = "QA MANAGER"
+    JOB_DESCRIPTION = "HEAD OF DEPT"
+    JOB_NOTE = "NEW MANAGER HIRED"
