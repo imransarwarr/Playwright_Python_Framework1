@@ -128,3 +128,7 @@ pytest Playwright_Core/tests/test_registrationPage.py -headed slo-mo 1000 -s
 ## Current Designation
 - Senior Test Automation Architect
 
+## Company names
+- SQA Trainings
+- web: https://www.sqatrainings.net/
+
