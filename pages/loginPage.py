@@ -1,5 +1,7 @@
 from pages.basePage import BasePage
+from utilities.logger import setup_logger
 
+logger = setup_logger()
 
 class LoginPage(BasePage):
 

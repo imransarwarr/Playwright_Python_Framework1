@@ -1,6 +1,7 @@
 from pages.basePage import BasePage
 
 
+
 class PIMPage(BasePage):
 
     # Locators

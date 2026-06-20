@@ -1,0 +1,2 @@
+[32mINFO    [0m root:conftest.py:52 Login process started
+[32mINFO    [0m root:test_pim.py:35 User landed on PIM Page Successfully

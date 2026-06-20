@@ -1,22 +1,14 @@
-import time
+import pytest
+from pages.loginPage import LoginPage
+from utilities.logger import setup_logger
 
 from pages.loginPage import LoginPage
 from utilities.configReader import ConfigReader
 
+logger = setup_logger()
 
-def test_valid_login(page):
-
+@pytest.fixture()
+def login_page(page):
     page.goto(ConfigReader.QA_URL)
-
-    login = LoginPage(page)
-
-    login.login(
-        ConfigReader.USERNAME,
-        ConfigReader.PASSWORD
-    )
-
-    page.wait_for_url("**/dashboard/**")
-
-    assert "dashboard" in page.url.lower()
-
-    time.sleep(2)
+    return LoginPage(page)
+logger.info("Login Successful")

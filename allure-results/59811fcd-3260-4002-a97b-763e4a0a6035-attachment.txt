@@ -1,0 +1,1 @@
+[32mINFO    [0m root:test_pim.py:36 User landed on PIM Page Successfully

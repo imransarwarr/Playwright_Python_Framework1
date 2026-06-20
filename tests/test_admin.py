@@ -1,9 +1,11 @@
-import pytest
+import time
 
+import pytest
+from playwright.sync_api import expect
 from pages.adminPage import AdminPage
 from testData.excel_reader import get_excel_data
 
-
+@pytest.mark.order(3)
 @pytest.mark.parametrize(
     "job_title,description,note",
     get_excel_data("JobTitles")
@@ -20,9 +22,14 @@ def test_add_job_title(logged_in_page, job_title, description, note):
         description,
         note
     )
+    time.sleep(1)
+    toast = logged_in_page.locator("text=Successfully Saved")
+    expect(toast).to_be_visible()
+
 
     # Verify Job Title is visible in table
     locator = logged_in_page.locator(f"text='{job_title}'")
 
     locator.wait_for()
     assert locator.is_visible()
+

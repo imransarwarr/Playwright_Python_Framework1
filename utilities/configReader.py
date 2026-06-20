@@ -13,3 +13,5 @@ class ConfigReader:
     QA_URL = os.getenv("QA_URL")
     USERNAME = os.getenv("APP_USERNAME")
     PASSWORD = os.getenv("APP_PASSWORD")
+
+
