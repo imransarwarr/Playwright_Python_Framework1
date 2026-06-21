@@ -13,3 +13,5 @@ def test_dashboard(logged_in_page):
 
     with allure.step("Redirect to dashboard page"):
         dashboard.navigate_to_pim()
+    with allure.step("Assertions updated"):
+        #assert.dashboard=True
